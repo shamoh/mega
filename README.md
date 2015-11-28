@@ -1,6 +1,9 @@
 Mega Platform
 =============
 
+Application Micro container based on [CDI](http://www.cdi-spec.org/).
+
+
 Build it
 --------
 
@@ -15,6 +18,12 @@ Install it
 ```shell
 gradle install
 ```
+
+
+Try it
+------
+
+There is dedicated [Mega Examples](https://github.com/shamoh/mega-examples) repository.
 
 
 Use it
@@ -43,7 +52,7 @@ dependencies {
 }
 ```
 
-(See https://jitpack.io/#shamoh/mega.)
+(See [https://jitpack.io/#shamoh/mega](https://jitpack.io/#shamoh/mega) for details.)
 
 
 TODO

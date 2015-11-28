@@ -7,6 +7,8 @@ allprojects {
         sourceCompatibility = "$targetJavaVersion"
         targetCompatibility = "$targetJavaVersion"
 
+        archivesBaseName = "${rootProject.name}-${name.replaceAll("\\p{Upper}") { "-${it.toLowerCase()}" }}"
+
         configurations {
             provided
         }

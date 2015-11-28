@@ -1,10 +1,10 @@
 rootProject.name = 'mega'
 
 // core
-include  \
-     "core:runtime"
+include \
+    "core:runtime"
 
 // modules
-include  \
-     "modules:grizzly",
-        "modules:jaxrs"
+include \
+    "modules:grizzly",
+    "modules:jaxrs"

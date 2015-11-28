@@ -1,5 +1,4 @@
 apply plugin: 'java'
-apply plugin: 'application'
 
 compileJava {
     //enable compilation in a separate daemon process
@@ -8,8 +7,6 @@ compileJava {
     //enable incremental compilation
     options.incremental = true
 }
-
-mainClassName = 'cz.kramolis.mega.internal.Main'
 
 dependencies {
     compile libraries.cdi
