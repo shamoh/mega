@@ -47,8 +47,8 @@ ext {
     megaVersion = '-SNAPSHOT'
 }
 dependencies {
-    compile "com.github.shamoh.mega:runtime:${megaVersion}"
-    compile "com.github.shamoh.mega:grizzly:${megaVersion}"
+    compile "com.github.shamoh.mega:mega-runtime:${megaVersion}"
+    compile "com.github.shamoh.mega:mega-grizzly:${megaVersion}"
 }
 ```
 
