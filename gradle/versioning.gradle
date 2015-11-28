@@ -1,0 +1,7 @@
+ext {
+    isSnapshot = version.endsWith("-SNAPSHOT")
+}
+
+allprojects {
+    version = rootProject.version
+}

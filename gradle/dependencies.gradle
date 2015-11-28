@@ -1,0 +1,40 @@
+ext {
+    versions = [:]
+    libraries = [:]
+}
+
+versions = [
+        cdi            : '2.0-EDR1',
+        weld           : '3.0.0.Alpha13',
+        deltaspike     : '1.5.1',
+        typesafe_config: '1.3.0',
+
+        junit          : '4.12',
+        hamcrest       : '1.3',
+        arquillian     : '1.1.7.Final',
+
+        grizzly        : '2.3.23',
+        jersey         : '2.22.1'
+
+]
+
+libraries = [
+        cdi            : ["javax.enterprise:cdi-api:${versions.cdi}"],
+        weld           : ["org.jboss.weld.se:weld-se-core:${versions.weld}"],
+
+        deltaspike     : ["org.apache.deltaspike.core:deltaspike-core-api:${versions.deltaspike}",
+                          "org.apache.deltaspike.core:deltaspike-core-impl:${versions.deltaspike}"],
+
+        typesafe_config: ["com.typesafe:config:${versions.typesafe_config}"],
+
+        grizzly_http   : ["org.glassfish.grizzly:grizzly-http-server:${versions.grizzly}"],
+
+        jaxrs          : ["javax.ws.rs:javax.ws.rs-api:${versions.jaxrs}"],
+        jersey_server  : ["org.glassfish.jersey.core:jersey-server:${versions.jersey}",
+                          "org.glassfish.jersey.containers:jersey-container-grizzly2-http:${versions.jersey}"],
+
+        junit          : ["junit:junit:${versions.junit}"],
+
+        hamcrest       : ["org.hamcrest:hamcrest-all:${versions.hamcrest}"]
+
+]

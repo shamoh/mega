@@ -1,0 +1,14 @@
+# gradle noise
+.gradle
+build/
+
+# osx noise
+.DS_Store
+
+# IntelliJ Idea noise
+.idea
+*.iws
+*.ipr
+*.iml
+*.releaseBackup
+atlassian-ide-plugin.xml

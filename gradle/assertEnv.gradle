@@ -1,0 +1,11 @@
+ext {
+    jvm = org.gradle.internal.jvm.Jvm.current()
+    javaVersion = JavaVersion.current()
+    systemCharset = java.nio.charset.Charset.defaultCharset().name()
+    gradleVersion = gradle.gradleVersion
+}
+
+//TODO find better way how to check Gradle version
+assert gradleVersion.startsWith('2.'): "Must use at least a Gradle 2.9. Current Gradle is ${gradleVersion}."
+assert JavaVersion.current().java8: "Must use a Java 8 compatible JVM to perform this build. Current JVM is ${jvm}"
+assert systemCharset == "UTF-8": "Platform encoding must be UTF-8. Is currently $systemCharset. Set -Dfile.encoding=UTF-8."

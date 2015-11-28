@@ -1,0 +1,39 @@
+ext {
+    targetJavaVersion = "1.8"
+}
+
+allprojects {
+    plugins.withType(JavaPlugin) {
+        sourceCompatibility = "$targetJavaVersion"
+        targetCompatibility = "$targetJavaVersion"
+
+        configurations {
+            provided
+        }
+
+        sourceSets {
+            main {
+                compileClasspath += configurations.provided
+                output.resourcesDir = 'build/classes/main'
+                output.classesDir = 'build/classes/main'
+            }
+            test {
+                compileClasspath += configurations.provided
+                runtimeClasspath += configurations.provided
+                output.resourcesDir = 'build/classes/test'
+                output.classesDir = 'build/classes/test'
+            }
+        }
+
+        jar {
+            manifest {
+                attributes 'Implementation-Title': project.name,
+                        'Implementation-Version': project.version,
+                        'Built-By': System.getProperty('user.name'),
+                        'Built-Date': new Date(),
+                        'Built-JDK': javaVersion,
+                        'Built-Gradle': gradleVersion
+            }
+        }
+    }
+}

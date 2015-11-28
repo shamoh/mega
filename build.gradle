@@ -1,0 +1,19 @@
+apply from: "gradle/assertEnv.gradle"
+apply from: "gradle/versioning.gradle"
+apply from: "gradle/dependencies.gradle"
+apply from: "gradle/java.gradle"
+apply from: "gradle/maven.gradle"
+
+allprojects {
+    group = 'com.github.shamoh.mega'
+}
+
+subprojects {
+    buildscript {
+        apply from: "${rootDir}/gradle/buildscript.gradle"
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.9'
+}

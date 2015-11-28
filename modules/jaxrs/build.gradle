@@ -1,0 +1,7 @@
+apply plugin: 'java'
+
+dependencies {
+    compile project(':modules:grizzly')
+    compile libraries.jaxrs
+    compile libraries.jersey_server
+}
