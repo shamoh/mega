@@ -1,4 +1,4 @@
-package cz.kramolis.mega.logging.internal;
+package cz.kramolis.mega.runtime.logging.internal;
 
 import java.util.logging.Logger;
 

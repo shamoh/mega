@@ -1,4 +1,4 @@
-package cz.kramolis.mega.config.internal;
+package cz.kramolis.mega.runtime.config.internal;
 
 import java.util.Map;
 import java.util.stream.Collectors;

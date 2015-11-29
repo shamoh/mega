@@ -3,7 +3,7 @@ package cz.kramolis.mega.grizzly;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import cz.kramolis.mega.Context;
+import cz.kramolis.mega.runtime.Context;
 import org.glassfish.grizzly.http.server.CLStaticHttpHandler;
 import org.glassfish.grizzly.http.server.HttpHandler;
 import org.glassfish.grizzly.http.server.HttpHandlerRegistration;

@@ -27,6 +27,14 @@ allprojects {
             }
         }
 
+        compileJava {
+            //enable compilation in a separate daemon process
+            options.fork = true
+
+            //enable incremental compilation
+            options.incremental = true
+        }
+
         jar {
             manifest {
                 attributes 'Implementation-Title': project.name,

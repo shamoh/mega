@@ -8,7 +8,7 @@ import javax.enterprise.event.Observes;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 
-import cz.kramolis.mega.Context;
+import cz.kramolis.mega.runtime.Context;
 import cz.kramolis.mega.grizzly.GrizzlyConfig;
 import cz.kramolis.mega.grizzly.HttpServerHolder;
 import org.glassfish.grizzly.http.server.HttpServer;

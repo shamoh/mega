@@ -53,14 +53,3 @@ dependencies {
 ```
 
 (See [https://jitpack.io/#shamoh/mega](https://jitpack.io/#shamoh/mega) for details.)
-
-
-TODO
-====
-
-Logging
--------
-
-- simplify logging configuration
-- add `@Log` annotation and `LogInterceptor` impl
-
