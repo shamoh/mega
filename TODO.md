@@ -3,6 +3,8 @@ TODO
 
 - introduce basic container states and corresponding events
 - introduce correct event names - event class end with `Event` suffix
+- Spock tests
+- Logger unit test support
 
 
 Configuration
@@ -38,3 +40,11 @@ Rule Engine
 -----------
 
 - react just in case of some rule is fulfilled
+
+
+Groovy Support
+--------------
+
+- DSL
+
+
