@@ -1,7 +1,6 @@
 package cz.kramolis.mega.runtime;
 
 import java.io.InputStream;
-import java.util.Date;
 import java.util.logging.LogManager;
 
 import javax.enterprise.inject.spi.CDI;
@@ -11,10 +10,12 @@ import cz.kramolis.mega.runtime.internal.Universe;
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
-        System.out.println("START: " + (new Date()));
+        final long initNanoTime = System.nanoTime();
         initLogging();
         try (CDI<Object> cdi = CDI.getCDIProvider().initialize()) {
             Universe universe = cdi.select(Universe.class).get();
+            Environment environment = cdi.select(Environment.class).get();
+            environment.setInitNanoTime(initNanoTime);
             universe.run();
         }
     }

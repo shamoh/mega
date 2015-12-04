@@ -17,8 +17,10 @@ public class Universe {
 
     @Inject
     private Logger logger;
+
     @Inject
     private Context context;
+
     @Inject
     private Event<Context> contextEvent;
 
