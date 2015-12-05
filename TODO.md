@@ -2,16 +2,16 @@ TODO
 ====
 
 - introduce basic container states and corresponding events
-- introduce correct event names - event class end with `Event` suffix
 - Spock tests
 - Logger unit test support
+- prefix each artifact
 
 
 Configuration
 -------------
 
 - introduce API/SPI
-- Q: is it posissible to Inject into DeltaSpike ConfigSource?
+- Q: is it possible to Inject into DeltaSpike ConfigSource?
 
 
 Logging
@@ -25,7 +25,7 @@ Logging
 Caching
 -------
 
-- add @Cacheable annotation and `CacheableInterceptor` impl
+- add `@Cacheable` annotation and `CacheableInterceptor` impl
 - use JCache
 - contribute to DeltaSpike
 
@@ -46,5 +46,4 @@ Groovy Support
 --------------
 
 - DSL
-
 

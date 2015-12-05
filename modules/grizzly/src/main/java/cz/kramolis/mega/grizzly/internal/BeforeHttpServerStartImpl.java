@@ -1,28 +1,37 @@
-package cz.kramolis.mega.grizzly;
+package cz.kramolis.mega.grizzly.internal;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-
+import cz.kramolis.mega.grizzly.BeforeHttpServerStart;
+import cz.kramolis.mega.grizzly.GrizzlyConfig;
 import cz.kramolis.mega.runtime.Context;
 import org.glassfish.grizzly.http.server.CLStaticHttpHandler;
 import org.glassfish.grizzly.http.server.HttpHandler;
 import org.glassfish.grizzly.http.server.HttpHandlerRegistration;
+import org.glassfish.grizzly.http.server.HttpServer;
 
-@ApplicationScoped
-public class GrizzlyHttpServerUtils {
+/**
+ * Event impl...
+ */
+public class BeforeHttpServerStartImpl implements BeforeHttpServerStart {
 
-    @Inject
-    private Context context;
+    private final HttpServer httpServer;
+    private final Context context;
+    private final GrizzlyConfig config;
 
-    @Inject
-    private GrizzlyConfig config;
+    public BeforeHttpServerStartImpl(Context context, GrizzlyConfig config, HttpServer httpServer) {
+        this.context = context;
+        this.config = config;
+        this.httpServer = httpServer;
+    }
 
-    @Inject
-    private HttpServerHolder httpServerHolder;
+    @Override
+    public HttpServer getHttpServer() {
+        return httpServer;
+    }
 
+    @Override
     public void registerHttpHandler(final HttpHandler httpHandler, final String contextPath) {
         final String urlPattern = "/*";
-        httpServerHolder.getHttpServer().getServerConfiguration().addHttpHandler(
+        httpServer.getServerConfiguration().addHttpHandler(
                 httpHandler,
                 HttpHandlerRegistration.builder()
                         .contextPath(contextPath)
@@ -30,6 +39,7 @@ public class GrizzlyHttpServerUtils {
                         .build());
     }
 
+    @Override
     public void registerStaticContentHttpHandler(final String docRoot, final String contextPath) {
         final boolean fileCacheEnabled = config.isStaticContentFileCacheEnabled();
         final CLStaticHttpHandler httpHandler = new CLStaticHttpHandler(

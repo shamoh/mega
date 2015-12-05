@@ -9,6 +9,7 @@ import javax.enterprise.event.Event;
 import javax.inject.Inject;
 
 import cz.kramolis.mega.runtime.Context;
+import cz.kramolis.mega.runtime.Environment;
 
 @ApplicationScoped
 public class Universe {
@@ -22,11 +23,15 @@ public class Universe {
     private Context context;
 
     @Inject
-    private Event<Context> contextEvent;
+    private Environment environment;
+
+    @Inject
+    private Event<Environment> environmentEvent;
+
 
     public void run() throws InterruptedException {
         logger.info("Application '" + context.getName() + "' is starting...");
-        contextEvent.fire(context);
+        environmentEvent.fire(environment);
         latch.await();
     }
 
