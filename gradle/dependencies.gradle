@@ -31,7 +31,8 @@ libraries = [
 
         jaxrs          : ["javax.ws.rs:javax.ws.rs-api:${versions.jaxrs}"],
         jersey_server  : ["org.glassfish.jersey.core:jersey-server:${versions.jersey}",
-                          "org.glassfish.jersey.containers:jersey-container-grizzly2-http:${versions.jersey}"],
+                          "org.glassfish.jersey.containers:jersey-container-grizzly2-http:${versions.jersey}",
+                          "org.glassfish.jersey.ext.cdi:jersey-weld2-se:${versions.jersey}"],
 
         junit          : ["junit:junit:${versions.junit}"],
 
