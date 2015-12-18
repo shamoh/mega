@@ -16,7 +16,7 @@ Install it
 ----------
 
 ```shell
-gradle install
+gradle -t install
 ```
 
 

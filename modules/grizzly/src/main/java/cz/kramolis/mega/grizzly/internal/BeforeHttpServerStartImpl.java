@@ -1,5 +1,8 @@
 package cz.kramolis.mega.grizzly.internal;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import cz.kramolis.mega.grizzly.BeforeHttpServerStart;
 import cz.kramolis.mega.grizzly.GrizzlyConfig;
 import cz.kramolis.mega.runtime.Context;
@@ -13,6 +16,8 @@ import org.glassfish.grizzly.http.server.HttpServer;
  * Event impl...
  */
 public class BeforeHttpServerStartImpl implements BeforeHttpServerStart {
+
+    private static final Logger LOGGER = Logger.getLogger(BeforeHttpServerStartImpl.class.getName());
 
     private final HttpServer httpServer;
     private final Context context;
@@ -31,6 +36,9 @@ public class BeforeHttpServerStartImpl implements BeforeHttpServerStart {
 
     @Override
     public void registerHttpHandler(final HttpHandler httpHandler, final String contextPath) {
+        if (LOGGER.isLoggable(Level.INFO)) {
+            LOGGER.info("registerHttpHandler @ " + contextPath + " : " + httpHandler);
+        }
         final String urlPattern = "/*";
         httpServer.getServerConfiguration().addHttpHandler(
                 httpHandler,
