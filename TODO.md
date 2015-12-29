@@ -5,6 +5,8 @@ TODO
 - Spock tests
 - Logger unit test support
 - prefix each artifact
+- pool instances
+- runtime environment
 
 
 Configuration
@@ -12,7 +14,7 @@ Configuration
 
 - introduce API/SPI
 - Q: is it possible to Inject into DeltaSpike ConfigSource?
-
+- apply runtime environment specific configuration with defaults.
 
 Logging
 -------

@@ -1,11 +1,15 @@
 package cz.kramolis.mega.runtime;
 
+import java.util.List;
+
 public interface Environment {
+
+    List<String> getArgs();
 
     void shutdown();
 
-    long getInitNanoTime();
-
     long getStartNanoTime();
+
+    long getRunNanoTime();
 
 }

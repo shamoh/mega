@@ -1,5 +1,7 @@
 package cz.kramolis.mega.runtime.internal;
 
+import java.util.List;
+import java.util.Objects;
 import java.util.logging.Logger;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -21,12 +23,13 @@ public class EnvironmentImpl implements Environment {
     @Inject
     private Event<BeforeShutdown> beforeShutdownEvent;
 
-    private long initNanoTime;
+    private List<String> args;
 
     private long startNanoTime;
 
+    private long runNanoTime;
+
     public EnvironmentImpl() {
-        this.startNanoTime = System.nanoTime();
     }
 
     @Override
@@ -36,19 +39,34 @@ public class EnvironmentImpl implements Environment {
     }
 
     @Override
-    public long getInitNanoTime() {
-        return initNanoTime;
+    public List<String> getArgs() {
+        return args;
     }
 
-    public void setInitNanoTime(long initNanoTime) {
-        this.initNanoTime = initNanoTime;
+    public void setArgs(List<String> args) {
+        Objects.requireNonNull(args);
 
-        logger.info("Initialized in " + ((startNanoTime - initNanoTime) / 1000000) + " ms.");
+        this.args = args;
     }
 
     @Override
     public long getStartNanoTime() {
         return startNanoTime;
+    }
+
+    public void setStartNanoTime(long startNanoTime) {
+        this.startNanoTime = startNanoTime;
+    }
+
+    @Override
+    public long getRunNanoTime() {
+        return runNanoTime;
+    }
+
+    public void initRunNanoTime() {
+        this.runNanoTime = System.nanoTime();
+
+        logger.info("Initialized in " + ((runNanoTime - startNanoTime) / 1000000) + " ms.");
     }
 
 }

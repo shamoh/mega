@@ -23,15 +23,15 @@ public class Universe {
     private Context context;
 
     @Inject
-    private Environment environment;
+    private EnvironmentImpl environment;
 
     @Inject
     private Event<Environment> environmentEvent;
 
-
     public void run() throws InterruptedException {
         logger.info("Application '" + context.getName() + "' is starting...");
         environmentEvent.fire(environment);
+        environment.initRunNanoTime();
         latch.await();
     }
 
