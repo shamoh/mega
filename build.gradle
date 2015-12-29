@@ -1,6 +1,3 @@
-// trying to fix problem with https://jitpack.io/#shamoh/mega builds ...
-apply plugin: 'maven'
-
 apply from: "gradle/assertEnv.gradle"
 apply from: "gradle/versioning.gradle"
 apply from: "gradle/dependencies.gradle"
@@ -22,5 +19,5 @@ task wrapper(type: Wrapper) {
 }
 
 gradle.buildFinished {
-    println "\t\t\t***** ${new java.util.Date()} *****"
+    println "Build finished: ${new java.util.Date()}"
 }
