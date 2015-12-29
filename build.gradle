@@ -1,3 +1,6 @@
+// trying to fix problem with https://jitpack.io/#shamoh/mega builds ...
+apply plugin: 'maven'
+
 apply from: "gradle/assertEnv.gradle"
 apply from: "gradle/versioning.gradle"
 apply from: "gradle/dependencies.gradle"
@@ -15,7 +18,7 @@ subprojects {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.9'
+    gradleVersion = '2.10'
 }
 
 gradle.buildFinished {
