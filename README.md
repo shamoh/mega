@@ -29,9 +29,7 @@ There is dedicated [Mega Examples](https://github.com/shamoh/mega-examples) repo
 Use it
 ------
 
-![JitPack](https://img.shields.io/github/tag/shamoh/mega.svg?label=JitPack)
-
-Add it in your build.gradle at the end of repositories:
+Add it in your `build.gradle` at the end of repositories:
 
 ```groovy
 repositories {
