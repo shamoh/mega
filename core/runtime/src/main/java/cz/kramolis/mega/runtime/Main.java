@@ -15,8 +15,6 @@ import cz.kramolis.mega.runtime.internal.Universe;
 
 public class Main {
 
-    mistake to test failing travis build ...
-
     public static final String PROP_SYSTEM_OUT_FILENAME = "mega.SystemOutFileName";
     public static final String PROP_SYSTEM_ERR_FILENAME = "mega.SystemErrFileName";
 
