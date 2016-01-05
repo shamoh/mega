@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/shamoh/mega.svg?branch=master)](https://travis-ci.org/shamoh/mega)
+
 Mega Platform
 =============
 
