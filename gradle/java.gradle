@@ -35,6 +35,10 @@ allprojects {
             options.incremental = true
         }
 
+        javadoc {
+            exclude '**/internal/**'
+        }
+
         jar {
             manifest {
                 attributes 'Implementation-Title': project.name,
