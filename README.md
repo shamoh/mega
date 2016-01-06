@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/shamoh/mega.svg?branch=master)](https://travis-ci.org/shamoh/mega)
+[![Coverage Status](https://coveralls.io/repos/shamoh/mega/badge.svg?branch=master&service=github)](https://coveralls.io/github/shamoh/mega?branch=master)
 
 Mega Platform
 =============
