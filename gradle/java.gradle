@@ -3,7 +3,10 @@ ext {
 }
 
 allprojects {
+    apply plugin: "jacoco"
+
     plugins.withType(JavaPlugin) {
+
         sourceCompatibility = "$targetJavaVersion"
         targetCompatibility = "$targetJavaVersion"
 
@@ -49,5 +52,17 @@ allprojects {
                         'Built-Gradle': gradleVersion
             }
         }
+
+        test {
+            jacoco {
+                destinationFile = file("$buildDir/jacoco/test.exec")
+                classDumpFile = file("$buildDir/jacoco/testClasspathDumps")
+            }
+        }
+
+        jacocoTestReport {
+            executionData = fileTree(dir: 'build/jacoco', include: '**/*.exec')
+        }
+
     }
 }

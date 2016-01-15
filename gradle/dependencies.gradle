@@ -35,8 +35,7 @@ libraries = [
                           "org.glassfish.jersey.containers:jersey-container-grizzly2-http:${versions.jersey}",
                           "org.glassfish.jersey.ext.cdi:jersey-weld2-se:${versions.jersey}"],
 
-        junit          : ["junit:junit:${versions.junit}"],
-
-        hamcrest       : ["org.hamcrest:hamcrest-all:${versions.hamcrest}"]
+        junit          : ["junit:junit:${versions.junit}",
+                          "org.hamcrest:hamcrest-all:${versions.hamcrest}"]
 
 ]

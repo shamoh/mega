@@ -25,8 +25,8 @@ class MegaPlugin implements Plugin<Project> {
             }
 
             // task dependencies
-            copyResourcesToClasses.mustRunAfter tasks.processResources
-            tasks.classes.dependsOn copyResourcesToClasses
+            copyResourcesToClassesTask.mustRunAfter tasks.processResources
+            tasks.classes.dependsOn copyResourcesToClassesTask
             startTask.dependsOn tasks.installDist
             startTask.dependsOn stopTask
         }

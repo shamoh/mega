@@ -1,11 +1,21 @@
+plugins {
+//    id "org.sonarqube" version "1.1"
+}
+
 apply from: "gradle/assertEnv.gradle"
 apply from: "gradle/versioning.gradle"
 apply from: "gradle/dependencies.gradle"
 apply from: "gradle/java.gradle"
+apply from: "gradle/integrationTest.gradle"
 apply from: "gradle/maven.gradle"
 
 allprojects {
     group = 'com.github.shamoh.mega'
+
+//    apply plugin: 'pmd'
+//    apply plugin: 'jdepend'
+//    apply plugin: 'findbugs'
+//    apply plugin: 'checkstyle'
 }
 
 subprojects {

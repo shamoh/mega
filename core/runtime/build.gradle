@@ -5,4 +5,10 @@ dependencies {
     compile libraries.weld
     compile libraries.deltaspike
     compile libraries.typesafe_config
+
+    testCompile libraries.junit
+
+    integrationTestCompile 'org.apache.deltaspike.modules:deltaspike-test-control-module-api:1.5.2'
+    integrationTestCompile 'org.apache.deltaspike.modules:deltaspike-test-control-module-impl:1.5.2'
+    integrationTestCompile 'org.apache.deltaspike.cdictrl:deltaspike-cdictrl-weld:1.5.2'
 }

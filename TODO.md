@@ -7,6 +7,7 @@ TODO
 - prefix each artifact
 - pool instances
 - runtime environment
+- aggregated javadoc
 
 
 Configuration

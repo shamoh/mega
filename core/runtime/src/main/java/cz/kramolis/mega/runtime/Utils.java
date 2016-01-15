@@ -2,7 +2,7 @@ package cz.kramolis.mega.runtime;
 
 import java.lang.annotation.Annotation;
 
-public class Utils {
+public final class Utils {
 
     private Utils() {
     }
