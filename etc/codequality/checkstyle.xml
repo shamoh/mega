@@ -43,6 +43,7 @@
 
         <!-- Checks for Javadoc comments.                     -->
         <!-- See http://checkstyle.sf.net/config_javadoc.html -->
+        <!--
         <module name="JavadocMethod">
           <property name="scope" value="package"/>
           <property name="allowMissingParamTags" value="true"/>
@@ -61,6 +62,7 @@
         <module name="JavadocStyle">
           <property name="checkEmptyJavadoc" value="true"/>
         </module>
+        -->
 
         <!-- Checks for Naming Conventions.                  -->
         <!-- See http://checkstyle.sf.net/config_naming.html -->
@@ -86,7 +88,7 @@
         <!-- See http://checkstyle.sf.net/config_sizes.html -->
         <module name="LineLength">
           <!-- what is a good max value? -->
-          <property name="max" value="120"/>
+          <property name="max" value="130"/>
           <!-- ignore lines like "$File: //depot/... $" -->
           <property name="ignorePattern" value="\$File.*\$"/>
           <property name="severity" value="info"/>

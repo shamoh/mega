@@ -12,14 +12,11 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;
 
-/**
- *
- */
 @RunWith(CdiTestRunner.class)
 public class UtilsIT {
 
     @Inject
-    private My my;
+    private MyBean myBean;
 
     @Test
     public void testGetAnnotationNoAnnotation() {
@@ -28,19 +25,19 @@ public class UtilsIT {
 
     @Test
     public void testGetAnnotationWithAnnotation() {
-        assertThat(Utils.getAnnotation(My.class, Deprecated.class), instanceOf(Deprecated.class));
+        assertThat(Utils.getAnnotation(MyBean.class, Deprecated.class), instanceOf(Deprecated.class));
     }
 
     @Test
     public void testGetAnnotationSyntheticWithAnnotation() {
-        assertThat(my.getClass().isSynthetic(), is(true));
-        assertThat(my.getClass().getAnnotation(Deprecated.class), is(nullValue()));
-        assertThat(Utils.getAnnotation(my.getClass(), Deprecated.class), instanceOf(Deprecated.class));
+        assertThat(myBean.getClass().isSynthetic(), is(true));
+        assertThat(myBean.getClass().getAnnotation(Deprecated.class), is(nullValue()));
+        assertThat(Utils.getAnnotation(myBean.getClass(), Deprecated.class), instanceOf(Deprecated.class));
     }
 
     @Deprecated
     @ApplicationScoped
-    public static class My {
+    public static class MyBean {
     }
 
 }

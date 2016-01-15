@@ -7,7 +7,7 @@ TODO
 - prefix each artifact
 - pool instances
 - runtime environment
-- aggregated javadoc
+- aggregated javadoc - publish to maven repo
 
 
 Configuration
@@ -16,6 +16,7 @@ Configuration
 - introduce API/SPI
 - Q: is it possible to Inject into DeltaSpike ConfigSource?
 - apply runtime environment specific configuration with defaults.
+
 
 Logging
 -------

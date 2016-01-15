@@ -3,6 +3,8 @@ package cz.kramolis.mega.runtime;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Objects;
@@ -13,10 +15,13 @@ import javax.enterprise.inject.spi.CDI;
 import cz.kramolis.mega.runtime.internal.EnvironmentImpl;
 import cz.kramolis.mega.runtime.internal.Universe;
 
-public class Main {
+public final class Main {
 
     public static final String PROP_SYSTEM_OUT_FILENAME = "mega.SystemOutFileName";
     public static final String PROP_SYSTEM_ERR_FILENAME = "mega.SystemErrFileName";
+
+    private Main() {
+    }
 
     public static void main(String[] args) throws Exception {
         final long initNanoTime = System.nanoTime();
@@ -70,9 +75,12 @@ public class Main {
         String fileName = System.getProperty(propName);
         if (fileName != null) {
             try {
-                return new PrintStream(fileName);
+                return new PrintStream(fileName, Charset.defaultCharset().name());
             } catch (FileNotFoundException ex) {
                 throw new IllegalArgumentException(
+                        "Problem to create " + fileName + " file, see value of " + propName + " system property.", ex);
+            } catch (UnsupportedEncodingException ex) {
+                throw new IllegalStateException(
                         "Problem to create " + fileName + " file, see value of " + propName + " system property.", ex);
             }
         }

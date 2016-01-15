@@ -5,15 +5,32 @@ subprojects {
         ignoreFailures = true
         configFile = rootProject.file('etc/codequality/checkstyle.xml')
     }
+    tasks.withType(Checkstyle) {
+        reports {
+            xml.enabled = false
+            html.enabled = true
+        }
+    }
 
     // FindBugs
     apply plugin: 'findbugs'
     findbugs {
         ignoreFailures = true
     }
+    tasks.withType(FindBugs) {
+        reports {
+            xml.enabled = false
+            html.enabled = true
+        }
+    }
 
     // PMD
     apply plugin: 'pmd'
-    //tasks.withType(Pmd) { reports.html.enabled true }
+    tasks.withType(Pmd) {
+        reports {
+            xml.enabled = false
+            html.enabled = true
+        }
+    }
 
 }
