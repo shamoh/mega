@@ -61,8 +61,13 @@ allprojects {
         }
 
         jacocoTestReport {
+            reports {
+                xml.enabled = true
+                html.enabled = true
+            }
             executionData = fileTree(dir: 'build/jacoco', include: '**/*.exec')
         }
 
+        check.dependsOn jacocoTestReport
     }
 }
