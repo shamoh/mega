@@ -1,10 +1,13 @@
 project.buildscript {
+
     ext {
         megaVersion = rootProject.version
     }
+
     repositories {
         mavenLocal()
         mavenCentral()
         jcenter()
     }
+
 }

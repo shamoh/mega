@@ -14,7 +14,7 @@ public final class Utils {
         final A annotation = clazz.getAnnotation(annotationClass);
 
         if (annotation == null
-                && (clazz.isSynthetic())) { //OK, this is probably proxy
+                && clazz.isSynthetic()) { //OK, this is probably proxy
             return getAnnotation(clazz.getSuperclass(), annotationClass);
         } else {
             return annotation;

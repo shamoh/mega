@@ -1,6 +1,12 @@
-plugins {
-//    id "org.sonarqube" version "1.1"
+buildscript {
+    repositories { jcenter() }
+
+    dependencies {
+        classpath 'com.netflix.nebula:gradle-aggregate-javadocs-plugin:2.2.+'
+    }
 }
+
+apply plugin: 'nebula-aggregate-javadocs'
 
 apply from: "gradle/assertEnv.gradle"
 apply from: "gradle/versioning.gradle"
@@ -8,14 +14,10 @@ apply from: "gradle/dependencies.gradle"
 apply from: "gradle/java.gradle"
 apply from: "gradle/integrationTest.gradle"
 apply from: "gradle/maven.gradle"
+apply from: 'gradle/check.gradle'
 
 allprojects {
     group = 'com.github.shamoh.mega'
-
-//    apply plugin: 'pmd'
-//    apply plugin: 'jdepend'
-//    apply plugin: 'findbugs'
-//    apply plugin: 'checkstyle'
 }
 
 subprojects {
