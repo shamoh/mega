@@ -67,7 +67,5 @@ allprojects {
             }
             executionData = fileTree(dir: 'build/jacoco', include: '**/*.exec')
         }
-
-        check.dependsOn jacocoTestReport
     }
 }
