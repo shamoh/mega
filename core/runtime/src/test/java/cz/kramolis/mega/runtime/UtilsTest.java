@@ -16,11 +16,11 @@ public class UtilsTest {
 
     @Test
     public void testGetAnnotationWithAnnotation() {
-        assertThat(Utils.getAnnotation(My.class, Deprecated.class), instanceOf(Deprecated.class));
+        assertThat(Utils.getAnnotation(MyBean.class, Deprecated.class), instanceOf(Deprecated.class));
     }
 
     @Deprecated
-    public interface My {
+    public interface MyBean {
     }
 
 }

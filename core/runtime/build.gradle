@@ -7,6 +7,4 @@ dependencies {
     compile libraries.typesafe_config
 
     testCompile libraries.junit
-
-    integrationTestCompile libraries.deltaspike_test
 }

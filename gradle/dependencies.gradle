@@ -26,10 +26,6 @@ libraries = [
         deltaspike     : ["org.apache.deltaspike.core:deltaspike-core-api:${versions.deltaspike}",
                           "org.apache.deltaspike.core:deltaspike-core-impl:${versions.deltaspike}"],
 
-        deltaspike_test: ["org.apache.deltaspike.modules:deltaspike-test-control-module-api:${versions.deltaspike}",
-                          "org.apache.deltaspike.modules:deltaspike-test-control-module-impl:${versions.deltaspike}",
-                          "org.apache.deltaspike.cdictrl:deltaspike-cdictrl-weld:${versions.deltaspike}"],
-
         typesafe_config: ["com.typesafe:config:${versions.typesafe_config}"],
 
         grizzly_http   : ["org.glassfish.grizzly:grizzly-http-server:${versions.grizzly}"],
