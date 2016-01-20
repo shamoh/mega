@@ -35,11 +35,6 @@ allprojects {
             //If you want to ensure that integration tests are run every time when you invoke
             //this task, uncomment the following line.
             //outputs.upToDateWhen { false }
-
-            jacoco {
-                destinationFile = file("$buildDir/jacoco/integrationTest.exec")
-                classDumpFile = file("$buildDir/jacoco/integrationTestClasspathDumps")
-            }
         }
 
         //Ensure that the check task fails the build if there are failing integration tests.

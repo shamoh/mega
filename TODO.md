@@ -8,6 +8,7 @@ TODO
 - pool instances
 - runtime environment
 - aggregated javadoc - publish to maven repo
+- do not run jacoco for tests/
 
 
 Configuration

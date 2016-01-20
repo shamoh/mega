@@ -28,10 +28,13 @@ public class Universe {
     @Inject
     private Event<Environment> environmentEvent;
 
-    public void run() throws InterruptedException {
+    public void start() {
         logger.info("Application '" + context.getName() + "' is starting...");
         environmentEvent.fire(environment);
         environment.initRunNanoTime();
+    }
+
+    public void await() throws InterruptedException {
         latch.await();
     }
 

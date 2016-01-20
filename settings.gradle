@@ -5,7 +5,15 @@ include \
     "core:runtime",
     "core:gradle-plugin"
 
+// debug
+include \
+    "debug:junit"
+
 // modules
 include \
     "modules:grizzly",
     "modules:jaxrs"
+
+// tests
+include \
+    "tests:hello-world"

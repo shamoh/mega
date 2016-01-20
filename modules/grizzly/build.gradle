@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply from: "$rootDir/gradle/jacoco.gradle"
 
 dependencies {
     compile project(':core:runtime')

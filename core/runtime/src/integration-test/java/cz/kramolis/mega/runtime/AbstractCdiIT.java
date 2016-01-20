@@ -9,22 +9,22 @@ import org.junit.BeforeClass;
 
 public abstract class AbstractCdiIT {
 
-    private static CDI<Object> cdi;
+    private static MainImpl main;
 
     @BeforeClass
     public static void initCdi() {
-        MainImpl main = new MainImpl();
-        main.initCdi();
-        cdi = main.getCdi();
+        main = new MainImpl();
+        main.init();
+        main.start();
     }
 
     @AfterClass
     public static void closeCdi() {
-        cdi.close();
+        main.close();
     }
 
     protected static CDI<Object> getCdi() {
-        return cdi;
+        return main.getCdi();
     }
 
 }

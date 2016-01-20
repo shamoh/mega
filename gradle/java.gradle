@@ -3,8 +3,6 @@ ext {
 }
 
 allprojects {
-    apply plugin: "jacoco"
-
     plugins.withType(JavaPlugin) {
 
         sourceCompatibility = "$targetJavaVersion"
@@ -57,19 +55,5 @@ allprojects {
             }
         }
 
-        test {
-            jacoco {
-                destinationFile = file("$buildDir/jacoco/test.exec")
-                classDumpFile = file("$buildDir/jacoco/testClasspathDumps")
-            }
-        }
-
-        jacocoTestReport {
-            reports {
-                xml.enabled = true
-                html.enabled = true
-            }
-            executionData = fileTree(dir: 'build/jacoco', include: '**/*.exec')
-        }
     }
 }

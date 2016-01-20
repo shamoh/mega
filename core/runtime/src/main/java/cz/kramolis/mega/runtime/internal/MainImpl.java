@@ -16,7 +16,9 @@ public final class MainImpl {
         this.initNanoTime = System.nanoTime();
     }
 
-    public void initCdi() {
+    public CDI<Object> init() {
+        new RuntimeException("Who calls MainImpl.init?").printStackTrace();
+
         CDI<Object> cdi = CDI.getCDIProvider().initialize();
         EnvironmentImpl environment = cdi.select(EnvironmentImpl.class).get();
 
@@ -24,25 +26,36 @@ public final class MainImpl {
         environment.setArgs(args);
 
         this.cdi = cdi;
-    }
-
-    public CDI<Object> getCdi() {
-        if (cdi == null) {
-            initCdi();
-        }
         return cdi;
     }
 
+    public CDI<Object> getCdi() {
+        return cdi;
+    }
+
+    public void start() {
+        if (cdi == null) {
+            init();
+        }
+        Universe universe = cdi.select(Universe.class).get();
+        universe.start();
+    }
+
     public void run() {
-        try (CDI<Object> cdi = getCdi()) {
+        try (CDI<Object> cdi = init()) {
+            start();
             Universe universe = cdi.select(Universe.class).get();
 
             try {
-                universe.run();
+                universe.await();
             } catch (InterruptedException ex) {
                 ex.printStackTrace(); //TODO
             }
         }
+    }
+
+    public void close() {
+        cdi.close();
     }
 
     public long getInitNanoTime() {

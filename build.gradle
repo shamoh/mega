@@ -13,8 +13,8 @@ apply from: "gradle/versioning.gradle"
 apply from: "gradle/dependencies.gradle"
 apply from: "gradle/java.gradle"
 apply from: "gradle/integrationTest.gradle"
-apply from: "gradle/maven.gradle"
 apply from: 'gradle/check.gradle'
+apply from: "gradle/maven.gradle"
 
 allprojects {
     group = 'com.github.shamoh.mega'
@@ -22,7 +22,7 @@ allprojects {
 
 subprojects {
     buildscript {
-        apply from: "${rootDir}/gradle/buildscript.gradle"
+        apply from: "$rootDir/gradle/buildscript.gradle"
     }
 }
 
