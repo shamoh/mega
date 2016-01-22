@@ -9,6 +9,8 @@ import org.apache.deltaspike.core.spi.config.ConfigSource;
 
 public class TypesafeConfigDeltaSpikeConfigSource implements ConfigSource {
 
+    private static final int ORDINAL = 50;
+
     private final Config config;
 
     public TypesafeConfigDeltaSpikeConfigSource() {
@@ -18,7 +20,7 @@ public class TypesafeConfigDeltaSpikeConfigSource implements ConfigSource {
     @Override
     public int getOrdinal() {
         // If a custom implementation should be invoked after the default implementations, use an ordinal-value < 100
-        return 50;
+        return ORDINAL;
     }
 
     @Override

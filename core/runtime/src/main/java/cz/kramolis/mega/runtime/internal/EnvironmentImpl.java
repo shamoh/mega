@@ -14,6 +14,8 @@ import cz.kramolis.mega.runtime.events.internal.BeforeShutdown;
 @ApplicationScoped
 public class EnvironmentImpl implements Environment {
 
+    private static final int MILLIS_IN_NANOS = 1000000;
+
     @Inject
     private Logger logger;
 
@@ -66,7 +68,7 @@ public class EnvironmentImpl implements Environment {
     public void initRunNanoTime() {
         this.runNanoTime = System.nanoTime();
 
-        logger.info("Initialized in " + ((runNanoTime - startNanoTime) / 1000000) + " ms.");
+        logger.info("Initialized in " + ((runNanoTime - startNanoTime) / MILLIS_IN_NANOS) + " ms.");
     }
 
 }

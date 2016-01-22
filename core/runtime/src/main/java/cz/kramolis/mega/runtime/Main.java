@@ -9,6 +9,9 @@ public final class Main {
     public static final String PROP_SYSTEM_OUT_FILENAME = "mega.SystemOutFileName";
     public static final String PROP_SYSTEM_ERR_FILENAME = "mega.SystemErrFileName";
 
+    private Main() {
+    }
+
     public static void main(String[] args) throws Exception {
         ConfigSupport.initConfig();
         LoggingSupport.initLogging();

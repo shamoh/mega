@@ -8,7 +8,10 @@ import java.nio.charset.Charset;
 import java.util.Optional;
 import java.util.logging.LogManager;
 
-public class LoggingSupport {
+public final class LoggingSupport {
+
+    private LoggingSupport() {
+    }
 
     public static void initLogging() {
         //TODO use config to configure this

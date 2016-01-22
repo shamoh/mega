@@ -1,6 +1,9 @@
 package cz.kramolis.mega.runtime.internal;
 
-public class ConfigSupport {
+public final class ConfigSupport {
+
+    private ConfigSupport() {
+    }
 
     public static void initConfig() {
         //TODO

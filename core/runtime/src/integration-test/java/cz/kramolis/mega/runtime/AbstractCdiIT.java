@@ -23,7 +23,7 @@ public abstract class AbstractCdiIT {
         main.close();
     }
 
-    protected static CDI<Object> getCdi() {
+    protected CDI<Object> getCdi() {
         return main.getCdi();
     }
 

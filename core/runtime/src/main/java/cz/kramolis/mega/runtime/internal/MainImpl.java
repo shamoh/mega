@@ -17,16 +17,17 @@ public final class MainImpl {
     }
 
     public CDI<Object> init() {
-        new RuntimeException("Who calls MainImpl.init?").printStackTrace();
+        this.cdi = createCdi();
+        return cdi;
+    }
 
-        CDI<Object> cdi = CDI.getCDIProvider().initialize();
-        EnvironmentImpl environment = cdi.select(EnvironmentImpl.class).get();
+    private CDI<Object> createCdi() {
+        CDI<Object> newCdi = CDI.getCDIProvider().initialize();
+        EnvironmentImpl environment = newCdi.select(EnvironmentImpl.class).get();
 
         environment.setStartNanoTime(getInitNanoTime());
         environment.setArgs(args);
-
-        this.cdi = cdi;
-        return cdi;
+        return newCdi;
     }
 
     public CDI<Object> getCdi() {
