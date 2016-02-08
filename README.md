@@ -66,3 +66,7 @@ dependencies {
 ```
 
 (See [https://jitpack.io/#shamoh/mega](https://jitpack.io/#shamoh/mega) for details.)
+
+## Test it
+
+![codecov.io](https://codecov.io/github/shamoh/mega/branch.svg?branch=master)
