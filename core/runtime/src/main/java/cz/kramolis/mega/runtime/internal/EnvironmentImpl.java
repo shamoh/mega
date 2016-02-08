@@ -36,6 +36,7 @@ public class EnvironmentImpl implements Environment {
 
     @Override
     public void shutdown() {
+        //TODO do not fire event and stop it twice!!!
         beforeShutdownEvent.fire(new BeforeShutdown());
         universe.stop();
     }

@@ -10,6 +10,7 @@ public final class MainImpl {
     private final List<String> args;
     private final long initNanoTime;
     private CDI<Object> cdi;
+    private EnvironmentImpl environment;
 
     public MainImpl(String... args) {
         this.args = Arrays.asList(args);
@@ -23,7 +24,7 @@ public final class MainImpl {
 
     private CDI<Object> createCdi() {
         CDI<Object> newCdi = CDI.getCDIProvider().initialize();
-        EnvironmentImpl environment = newCdi.select(EnvironmentImpl.class).get();
+        environment = newCdi.select(EnvironmentImpl.class).get();
 
         environment.setStartNanoTime(getInitNanoTime());
         environment.setArgs(args);
@@ -56,6 +57,7 @@ public final class MainImpl {
     }
 
     public void close() {
+        environment.shutdown();
         cdi.close();
     }
 
