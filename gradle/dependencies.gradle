@@ -15,8 +15,9 @@ versions = [
 
         jaxrs          : '2.0.1',
         grizzly        : '2.3.23',
-        jersey         : '2.22.1'
+        jersey         : '2.22.1',
 
+        checkstyle     : '6.15'
 ]
 
 libraries = [

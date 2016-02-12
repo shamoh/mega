@@ -1,7 +1,7 @@
 subprojects {
     // Checkstyle
     apply plugin: 'checkstyle'
-    checkstyle.toolVersion = '6.15'
+    checkstyle.toolVersion = versions.checkstyle
 
     checkstyle {
         ignoreFailures = true
