@@ -1,8 +1,8 @@
 package cz.kramolis.mega.runtime;
 
-import javax.enterprise.inject.spi.CDI;
-
 import cz.kramolis.mega.runtime.internal.MainImpl;
+
+import javax.enterprise.inject.spi.CDI;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;

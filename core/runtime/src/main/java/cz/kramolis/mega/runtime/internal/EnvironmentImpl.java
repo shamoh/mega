@@ -1,5 +1,8 @@
 package cz.kramolis.mega.runtime.internal;
 
+import cz.kramolis.mega.runtime.Environment;
+import cz.kramolis.mega.runtime.events.internal.BeforeShutdown;
+
 import java.util.List;
 import java.util.Objects;
 import java.util.logging.Logger;
@@ -7,9 +10,6 @@ import java.util.logging.Logger;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
-
-import cz.kramolis.mega.runtime.Environment;
-import cz.kramolis.mega.runtime.events.internal.BeforeShutdown;
 
 @ApplicationScoped
 public class EnvironmentImpl implements Environment {

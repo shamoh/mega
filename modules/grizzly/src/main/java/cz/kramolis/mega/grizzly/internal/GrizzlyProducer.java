@@ -1,5 +1,10 @@
 package cz.kramolis.mega.grizzly.internal;
 
+import cz.kramolis.mega.grizzly.BeforeHttpServerStart;
+import cz.kramolis.mega.grizzly.GrizzlyConfig;
+import cz.kramolis.mega.runtime.Context;
+import cz.kramolis.mega.runtime.Environment;
+
 import java.io.IOException;
 import java.util.function.Supplier;
 
@@ -9,11 +14,6 @@ import javax.enterprise.event.Observes;
 import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
-
-import cz.kramolis.mega.grizzly.BeforeHttpServerStart;
-import cz.kramolis.mega.grizzly.GrizzlyConfig;
-import cz.kramolis.mega.runtime.Context;
-import cz.kramolis.mega.runtime.Environment;
 
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.grizzly.http.server.NetworkListener;

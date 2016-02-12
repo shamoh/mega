@@ -1,14 +1,14 @@
 package cz.kramolis.mega.jaxrs.internal;
 
+import cz.kramolis.mega.grizzly.BeforeHttpServerStart;
+import cz.kramolis.mega.jaxrs.BeforeJaxRsStart;
+import cz.kramolis.mega.runtime.Utils;
+
 import java.util.Arrays;
 import java.util.logging.Logger;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
-
-import cz.kramolis.mega.grizzly.BeforeHttpServerStart;
-import cz.kramolis.mega.jaxrs.BeforeJaxRsStart;
-import cz.kramolis.mega.runtime.Utils;
 
 import org.glassfish.grizzly.http.server.HttpHandler;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpContainer;

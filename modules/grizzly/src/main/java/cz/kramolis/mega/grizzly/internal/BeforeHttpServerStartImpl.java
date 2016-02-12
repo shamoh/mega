@@ -1,11 +1,11 @@
 package cz.kramolis.mega.grizzly.internal;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import cz.kramolis.mega.grizzly.BeforeHttpServerStart;
 import cz.kramolis.mega.grizzly.GrizzlyConfig;
 import cz.kramolis.mega.runtime.Context;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.glassfish.grizzly.http.server.CLStaticHttpHandler;
 import org.glassfish.grizzly.http.server.HttpHandler;

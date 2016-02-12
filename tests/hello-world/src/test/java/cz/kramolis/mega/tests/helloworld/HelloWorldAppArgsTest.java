@@ -1,8 +1,8 @@
 package cz.kramolis.mega.tests.helloworld;
 
-import javax.inject.Inject;
-
 import cz.kramolis.mega.debug.junit.MegaRunner;
+
+import javax.inject.Inject;
 
 import org.junit.Ignore;
 import org.junit.Test;

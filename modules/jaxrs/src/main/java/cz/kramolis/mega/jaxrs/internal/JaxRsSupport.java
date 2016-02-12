@@ -1,12 +1,12 @@
 package cz.kramolis.mega.jaxrs.internal;
 
+import cz.kramolis.mega.grizzly.BeforeHttpServerStart;
+import cz.kramolis.mega.jaxrs.BeforeJaxRsStart;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Event;
 import javax.enterprise.event.Observes;
 import javax.inject.Inject;
-
-import cz.kramolis.mega.grizzly.BeforeHttpServerStart;
-import cz.kramolis.mega.jaxrs.BeforeJaxRsStart;
 
 @ApplicationScoped
 public class JaxRsSupport {

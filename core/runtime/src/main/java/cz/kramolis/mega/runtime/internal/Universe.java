@@ -1,5 +1,8 @@
 package cz.kramolis.mega.runtime.internal;
 
+import cz.kramolis.mega.runtime.Context;
+import cz.kramolis.mega.runtime.Environment;
+
 import java.util.concurrent.CountDownLatch;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -7,9 +10,6 @@ import java.util.logging.Logger;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
-
-import cz.kramolis.mega.runtime.Context;
-import cz.kramolis.mega.runtime.Environment;
 
 @ApplicationScoped
 public class Universe {
