@@ -15,7 +15,7 @@ public class MegaFormatter extends Formatter {
         arguments[1] = record.getSourceClassName();
         arguments[2] = record.getSourceMethodName();
         arguments[3] = record.getLevel();
-//        arguments[4] = Long.toString( Thread.currentThread().getId() );
+        //arguments[4] = Long.toString( Thread.currentThread().getId() );
         arguments[4] = Thread.currentThread().getName();
         arguments[5] = record.getMessage();
 
